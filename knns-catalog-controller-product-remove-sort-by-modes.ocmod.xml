@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification>
+	<id><![CDATA[[OCMOD] Remove sort-by modes from lists (Category, Manufacturer etc.)]]></id>
+	<name><![CDATA[Remove sort-by modes from lists (Category, Manufacturer etc.)]]></name>
+	<code>knns-catalog-controller-product-remove-sort-by-modes</code>
+	<version>0.1.0</version>
+	<author><![CDATA[<font color="#7F458C"><b>kanenas.net (aka Nikolas Branis)</b></font> - nbran@kanenas.net]]></author>
+	<link>https://kanenas.net/</link>
+	<file path="catalog/controller/product/{category,manufacturer,search,special}.php" error="log">
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_name_asc'),]]></search>
+			<add position="before" offset="1" ><![CDATA[/*]]></add>
+		</operation>
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_price_asc'),]]></search>
+			<add position="before" offset="1" ><![CDATA[*/]]></add>
+		</operation>
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_model_asc'),]]></search>
+			<add position="before" offset="1" ><![CDATA[/*]]></add>
+		</operation>
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_model_asc'),]]></search>
+			<add position="after" offset="3"><![CDATA[*/]]></add>
+		</operation>
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_model_desc'),]]></search>
+			<add position="before" offset="1" ><![CDATA[/*]]></add>
+		</operation>
+		<operation error="skip">
+			<search><![CDATA['text'  => $this->language->get('text_model_desc'),]]></search>
+			<add position="after" offset="3"><![CDATA[*/]]></add>
+		</operation>
+	</file>
+</modification>
